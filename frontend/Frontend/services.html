@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amaraye Trading FZE LLC - Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000000;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 0;
+    }
+    .gold-accent {
+      color: #d4af37;
+    }
+    .playfair {
+      font-family: 'Playfair Display', serif;
+    }
+    .main-layout {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 128px); /* Adjust for header (64px) and footer (64px) */
+    }
+    .text-section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .photo-section {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem; /* Reduced gap to minimize white space */
+      justify-content: center;
+    }
+    .photo-item {
+      flex: 1 1 20%; /* Approximately 25% width minus gap */
+      min-width: 200px; /* Ensure minimum width for smaller screens */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .photo-item img {
+      width: 100%;
+      height: 400px; /* Increased height to fill more space */
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .text-section {
+        padding: 1rem;
+      }
+      .photo-section {
+        padding: 1rem;
+      }
+      .photo-item {
+        flex: 1 1 45%; /* Two items per row on mobile */
+        min-width: 150px;
+      }
+      .photo-item img {
+        height: 250px; /* Increased height on mobile */
+      }
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Header -->
+  <header class="bg-black shadow sticky top-0 z-10">
+  <nav class="container mx-auto px-4 py-4 flex justify-between items-center relative">
+    <div class="flex items-center">
+      <img src="assets/logo.png.png" alt="Amaraye Trading Logo" class="h-14 mr-2 max-w-full" loading="lazy">
+    </div>
+    <!-- Hamburger button (Visible on Mobile) -->
+    <button id="menu-toggle" class="md:hidden text-gray-400 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    <!-- Menu (Hidden by default, shown on hover on desktop) -->
+    <ul id="nav-menu" class="hidden absolute md:static top-16 right-0 w-full md:w-auto bg-black md:bg-transparent md:flex md:flex-row items-center p-4 md:p-0 md:space-x-6 md:right-4 transition-all duration-300">
+      <li><a href="index.html" class="hover:gold-accent transition block py-2 md:py-0">Home</a></li>
+      <li><a href="about.html" class="hover:gold-accent transition block py-2 md:py-0">About Us</a></li>
+      <li><a href="services.html" class="hover:gold-accent transition block py-2 md:py-0">Services</a></li>
+      <li><a href="location.html" class="hover:gold-accent transition block py-2 md:py-0">Location</a></li>
+      <li><a href="contact.html" class="hover:gold-accent transition block py-2 md:py-0">Contacts</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- Text Section -->
+    <div class="text-section">
+      <h2 class="text-3xl font-bold gold-accent mb-4 playfair">Our Services</h2>
+      <p class="text-lg mb-6">We specialize in the whole distribution of wide range of metals and raw resources, responsibly handled professionally and delivered with unmatched efficiency. This include wholesale of metals and metal ores, wholesale of ferrous and non-ferrous metal ores, wholesale of ferrous and non-ferrous metals in primary forms and wholesale of ferrous and non-ferrous semi-finished metal products.</p>
+    </div>
+
+    <!-- Photo Section -->
+    <div class="photo-section">
+      <div class="photo-item">
+        <img src="assets/metal-ores.jpg.jpg" alt="Wholesale of Metals and Metal Ores" loading="lazy">
+        <p class="text-center mt-2">Wholesale of Metals and Metal Ores<br>(High grade metals for industrial application)</p>
+      </div>
+      <div class="photo-item">
+        <img src="assets/ferrous-ores.jpg.webp" alt="Wholesale of Ferrous and non-ferrous Metal ores" loading="lazy">
+        <p class="text-center mt-2">Wholesale of Ferrous and non-ferrous Metal ores<br>(Reliable supply of raw materials)</p>
+      </div>
+      <div class="photo-item">
+        <img src="assets/primary-metals.jpg.jpg" alt="Wholesale of ferrous and non-ferrous in primary forms" loading="lazy">
+        <p class="text-center mt-2">Wholesale of ferrous and non-ferrous in primary forms<br>(Quality metals for manufacturing)</p>
+      </div>
+      <div class="photo-item">
+        <img src="assets/semi-finished.jpg.jpg" alt="Wholesale of semi-finished metal products" loading="lazy">
+        <p class="text-center mt-2">Wholesale of semi-finished metal products<br>(Versatile semi-finished products for diverse needs)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 py-4 text-center">
+    <p>© 2025 Amaraye Trading FZE LLC. All rights reserved.</p>
+  </footer>
+
+ <script>
+  // Hamburger menu and hover behavior
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const header = document.querySelector('header');
+
+  // Hamburger menu toggle for mobile
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+
+  // Show/hide menu on hover for desktop
+  header.addEventListener('mouseenter', () => {
+    if (window.innerWidth >= 768) { // Only on desktop (md breakpoint)
+      navMenu.classList.remove('hidden');
+    }
+  });
+  header.addEventListener('mouseleave', () => {
+    if (window.innerWidth >= 768) { // Only on desktop
+      navMenu.classList.add('hidden');
+    }
+  });
+
+  // Auto-navigation to next page
+  const pageOrder = [
+    'index.html',
+    'about.html',
+    'services.html',
+    'location.html',
+    'contact.html'
+  ];
+  let currentPage = window.location.pathname.split('/').pop();
+  if (!currentPage || currentPage === '') {
+    currentPage = 'index.html'; // Default to index.html if path is empty
+  }
+  let nextPageIndex = (pageOrder.indexOf(currentPage) + 1) % pageOrder.length;
+  let nextPage = pageOrder[nextPageIndex];
+
+  // Debug: Log to check page detection
+  console.log('Current Page:', currentPage);
+  console.log('Next Page:', nextPage);
+
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+    // Debug: Log scroll position
+    console.log('Scroll Position:', scrollPosition, 'Page Height:', pageHeight);
+    if (scrollPosition >= pageHeight - 300) { // Trigger earlier (300px from bottom)
+      window.location.href = nextPage;
+    }
+  });
+</script>
+</body>
+</html>
