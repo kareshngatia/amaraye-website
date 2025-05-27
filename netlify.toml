@@ -1,0 +1,14 @@
+# Configuration for the frontend site
+[build]
+  base = "frontend"
+  publish = "frontend"
+  command = "echo 'Static site, no build command needed'"
+
+# Configuration for Netlify Functions (backend)
+[[redirects]]
+  from = "/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+[functions]
+  directory = "backend/netlify/functions"
